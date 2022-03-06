@@ -40,6 +40,8 @@ class OptionsState extends MusicBeatState
 				openSubState(new options.NotesSubState());
 			case 'Controls':
 				openSubState(new options.ControlsSubState());
+                                case 'Android Controls':
+                                        MusicBeatState.switchState(new android.CastomAndroidControls());
 			case 'Graphics':
 				openSubState(new options.GraphicsSettingsSubState());
 			case 'Visuals and UI':
@@ -85,6 +87,8 @@ class OptionsState extends MusicBeatState
 
 		changeSelection();
 		ClientPrefs.saveSettings();
+
+                addVirtualPad(UP_DOWN, A_B);
 
 		super.create();
 	}
