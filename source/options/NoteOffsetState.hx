@@ -298,7 +298,7 @@ class NoteOffsetState extends MusicBeatState
 				}
 			}
 
-			if(controls.RESET)
+			if(controls.RESET#if android || _virtualpad.buttonC.justPressed #end)
 			{
 				for (i in 0...ClientPrefs.comboOffset.length)
 				{
