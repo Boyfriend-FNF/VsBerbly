@@ -66,8 +66,8 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
-                        ['Android Port']
-                        ['Boyfriend FNF',		'nothing',		'an unimportant guy',						'https://youtube.com/c/BoyfriendFNF' 'ed1a3d']
+                        ['Android Port'],
+                        ['Boyfriend FNF',		'nothing',		'an unimportant guy',						'https://youtube.com/c/BoyfriendFNF' 'ed1a3d'],
 			['Berdly Quest 2 TEAM'],
 			['Humbay',		'humbay',		'Director/Artist',						'https://twitter.com/humbaynoob',	'ed1a3d'],
 			['Taeskull',			'taeskull',		'Composer',					'https://twitter.com/taeskull27',		'8892b3'],
