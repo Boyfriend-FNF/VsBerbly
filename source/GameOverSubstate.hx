@@ -137,13 +137,9 @@ class GameOverSubstate extends MusicBeatSubstate
 		add(camFollowPos);
 
                 #if android
-		addVirtualPad(NONE, A_B);
-		
-		var camcontrol = new FlxCamera();
-		FlxG.cameras.add(camcontrol);
-		camcontrol.bgColor.alpha = 0;
-		_virtualpad.cameras = [camcontrol];
-		#end
+                addVirtualPad(NONE, A_B);
+                addPadCamera();
+                #end
 	}
 
 	override function update(elapsed:Float)
