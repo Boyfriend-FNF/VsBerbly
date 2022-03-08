@@ -185,20 +185,21 @@ jobs:
           haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_ROOT
           haxelib run lime config JAVA_HOME $JAVA_HOME
           haxelib run lime config ANDROID_SETUP true
-          haxelib run lime setup android
           haxelib install flixel-tools
           haxelib install flixel-ui 
           haxelib install flixel-addons
           haxelib install hscript
+          haxelib git polymod https://github.com/MasterEric/polymod.git
           haxelib git linc_luajit https://github.com/jigsaw-4277821/linc_luajit.git
           haxelib git AndroidTools https://github.com/jigsaw-4277821/AndroidTools.git   
-          haxelib git extension-webview https://github.com/jigsaw-4277821/extension-webview.git --quiet     
+          haxelib git extension-webview https://github.com/jigsaw-4277821/extension-webview.git --quiet
           haxelib list
           
       - name: Create Version Tag
         run: echo "${{github.run_id}}" > VERSION
       - name: Compile
         run: |
+          haxelib run lime setup android
           haxelib run lime build android --app-version="4.0.0-${{ github.run_id}}"
           
       - name: Publish Artifact
