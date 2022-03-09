@@ -2265,7 +2265,7 @@ class PlayState extends MusicBeatState
 			botplayTxt.alpha = 1 - Math.sin((Math.PI * botplaySine) / 180);
 		}
 
-		if (controls.PAUSE && startedCountdown && canPause)
+		if (controls.PAUSE #if android || FlxG.android.justReleased.BACK #end && startedCountdown && canPause)
 		{
 			var ret:Dynamic = callOnLuas('onPause', []);
 			if(ret != FunkinLua.Function_Stop) {
@@ -3203,6 +3203,9 @@ class PlayState extends MusicBeatState
 			}
 		}
 		
+                #if android
+                androidc.visible = false;
+                #end
 		timeBarBG.visible = false;
 		timeBar.visible = false;
 		timeTxt.visible = false;
