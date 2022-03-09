@@ -184,7 +184,6 @@ class StoryMenuState extends MusicBeatState
 		// add(rankText);
 		add(scoreText);
 		add(txtWeekTitle);
-		add(loadscreen);
 
 		changeWeek();
 		
