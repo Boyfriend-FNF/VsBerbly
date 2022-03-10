@@ -253,7 +253,6 @@ class StoryMenuState extends MusicBeatState
 			}
 			else if (controls.ACCEPT)
 			{
-				FlxTween.tween(loadscreen, {alpha: 1}, 1.0, {ease: FlxEase.expoInOut});
 				selectWeek();
 			}
 		}
