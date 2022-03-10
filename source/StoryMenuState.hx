@@ -42,8 +42,6 @@ class StoryMenuState extends MusicBeatState
 
 	var txtTracklist:FlxText;
 
-	var loadscreen:FlxSprite;
-
 	var grpWeekText:FlxTypedGroup<MenuItem>;
 	var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
 
@@ -56,6 +54,9 @@ class StoryMenuState extends MusicBeatState
 
 	override function create()
 	{
+		Paths.clearStoredMemory();
+		Paths.clearUnusedMemory();
+
 		#if MODS_ALLOWED
 		Paths.destroyLoadedImages();
 		#end
@@ -71,9 +72,6 @@ class StoryMenuState extends MusicBeatState
 		txtWeekTitle = new FlxText(FlxG.width * 0.7, 10, 0, "", 32);
 		txtWeekTitle.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, RIGHT);
 		txtWeekTitle.alpha = 0.7;
-
-		loadscreen = new FlxSprite(0, 0).loadGraphic(Paths.image('loading'));
-		loadscreen.alpha = 0;
 
 		var rankText:FlxText = new FlxText(0, 10);
 		rankText.text = 'RANK: GREAT';
