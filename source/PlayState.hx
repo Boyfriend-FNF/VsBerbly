@@ -1314,9 +1314,9 @@ class PlayState extends MusicBeatState
 	public function startVideo(name:String):Void {
 		#if VIDEOS_ALLOWED
 		var foundFile:Bool = false;
-		var fileName:String = #if MODS_ALLOWED Paths.modFolders('videos/' + name + '.' + Paths.VIDEO_EXT); #else ''; #end
+		var fileName:String = 'mods/videos/' + name + '.' + Paths.VIDEO_EXT;
 		#if sys
-		if(FileSystem.exists(fileName)) {
+		if(FileSystem.exists(SUtil.getPath() + fileName)) {
 			foundFile = true;
 		}
 		#end
@@ -1324,7 +1324,7 @@ class PlayState extends MusicBeatState
 		if(!foundFile) {
 			fileName = Paths.video(name);
 			#if sys
-			if(FileSystem.exists(fileName)) {
+			if(FileSystem.exists(SUtil.getPath() + fileName)) {
 			#else
 			if(OpenFlAssets.exists(fileName)) {
 			#end
