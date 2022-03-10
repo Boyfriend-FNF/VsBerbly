@@ -376,6 +376,11 @@ class ChartingState extends MusicBeatState
 		add(zoomTxt);
 		
 		updateGrid();
+
+                #if android
+		addVirtualPad(FULL, A_B_X_Y);
+		#end
+
 		super.create();
 	}
 
