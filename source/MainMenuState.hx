@@ -35,10 +35,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'story_mode',
 		'freeplay',
-		#if MODS_ALLOWED 'mods', #end
-		#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
-		#if !switch 'donate', #end
 		'options'
 	];
 
@@ -235,15 +232,16 @@ class MainMenuState extends MusicBeatState
 								switch (daChoice)
 								{
 									case 'story_mode':
-										MusicBeatState.switchState(new StoryMenuState());
-									case 'freeplay':
-										MusicBeatState.switchState(new FreeplayState());
+										var songname = "Birdbrain"; //song name -lunar
+										var diff = 1; // diffaculty (0-easy 1-normal 2-hard)
+										var daweek = 0; //0 - 5 (0-tutorial 1-week1 ect)  
+						
+										var songLowercase:String = Paths.formatToSongPath(songname);
+										var poop:String = Highscore.formatSong(songLowercase, diff); // I got this from the mod "fnf x fallen stars" sorry, I don't know how to work with code
 									#if MODS_ALLOWED
 									case 'mods':
 										MusicBeatState.switchState(new ModsMenuState());
 									#end
-									case 'awards':
-										MusicBeatState.switchState(new AchievementsMenuState());
 									case 'credits':
 										MusicBeatState.switchState(new CreditsState());
 									case 'options':
