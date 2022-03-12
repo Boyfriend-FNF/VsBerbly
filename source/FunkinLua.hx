@@ -170,7 +170,7 @@ class FunkinLua {
 			var cervix = luaFile + ".lua";
 			var doPush = false;
 			if(FileSystem.exists(Paths.modFolders(cervix))) {
-				cervix = Paths.modFolders(cervix);
+				cervix = SUtil.getPath() + Paths.modFolders(cervix);
 				doPush = true;
 			} else {
 				cervix = Paths.getPreloadPath(cervix);
