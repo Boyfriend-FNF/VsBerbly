@@ -233,7 +233,7 @@ class MainMenuState extends MusicBeatState
 								{
 									case 'story_mode':
 										var songname = "Birdbrain"; //song name -lunar
-										var diff = 1; // diffaculty (0-easy 1-normal 2-hard)
+										var diff = 2; // diffaculty (0-easy 1-normal 2-hard)
 										var daweek = 0; //0 - 5 (0-tutorial 1-week1 ect)  
 						
 										var songLowercase:String = Paths.formatToSongPath(songname);
